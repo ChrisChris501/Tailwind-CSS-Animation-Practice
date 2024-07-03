@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <title>Landing Page for Tailwind CSS Animation</title>
+    <style>
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-bounce {
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bg-slide {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .bg-animated {
+            background: linear-gradient(270deg, #b1d9ed, #afb68d, #b2bcdc);
+            background-size: 600% 600%;
+            animation: bg-slide 10s ease infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+    <header class="w-full bg-blue-600 text-white p-4 shadow-md">
+        <nav class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">MyLogo</div>
+            <div>
+                <a href="#about" class="mr-4 hover:text-gray-300">About</a>
+                <a href="#services" class="mr-4 hover:text-gray-300">Services</a>
+                <a href="#contact" class="hover:text-gray-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <main class="flex-1 flex flex-col items-center justify-center text-center bg-animated w-full">
+        <h1 class="text-5xl font-bold mb-4 animate-bounce text-white">Welcome to Our Website</h1>
+        <p class="text-lg text-gray-200 mb-8">We create amazing solutions for your business.</p>
+        <button
+            class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105 animate-pulse">
+            Get Started
+        </button>
+    </main>
+    <footer class="w-full bg-blue-600 text-white p-4 text-center">
+        &copy; 2024 MyCompany. All rights reserved.
+    </footer>
+</body>
+
+</html>
